@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //記得圖片一開始位置
+    var imageOriginCoordinate:CGFloat?
     //遊戲進行與否
     var isGamePlaying:Bool = false
     //處理時間到了以後alert重複Present的問題
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
     
     func rule(direction:String,gestureDirection:String){
         if self.isGamePlaying{
+            //記得原本的位置
+            self.imageOriginCoordinate = self.imageView.frame.origin.x
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
                 self.imageView.frame.origin.x = self.imageView.frame.origin.x - 50
                 self.imageView.alpha = CGFloat(0.0)
@@ -65,8 +69,10 @@ class ViewController: UIViewController {
                 }
             }
             self.direction = self.arrowArray[Int(arc4random_uniform(UInt32(self.arrowArray.count)))]
+            //把原本的位置存回去
+            self.imageView.frame.origin.x = self.imageOriginCoordinate! + 50
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
-                self.imageView.frame.origin.x = self.imageView.frame.origin.x + 50
+                self.imageView.frame.origin.x = self.imageView.frame.origin.x - 50
                 self.imageView.alpha = CGFloat(1.0)
             }, completion: nil)
             self.imageView.image = UIImage(named: self.direction)
