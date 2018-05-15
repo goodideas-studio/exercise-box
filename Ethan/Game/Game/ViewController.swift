@@ -8,6 +8,26 @@
 
 import UIKit
 
+enum GestureDirection:String{
+    case Up
+    case Down
+    case Left
+    case Right
+}
+
+enum ImageDirection:String{
+    case blueUp
+    case blueDown
+    case blueLeft
+    case blueRight
+    case redUp
+    case redDown
+    case redLeft
+    case redRight
+}
+
+
+
 class ViewController: UIViewController {
     
     //記得圖片一開始位置
@@ -16,6 +36,7 @@ class ViewController: UIViewController {
     var isGamePlaying:Bool = false
     //處理時間到了以後alert重複Present的問題
     var alertPresentedForCountDown:Bool = false
+    
     //倒數計時
     var timer:Timer?
     var counter = 20{
@@ -23,6 +44,7 @@ class ViewController: UIViewController {
             self.timeLabel.text = "時間:\(counter)秒"
         }
     }
+    
     //時間
     @IBOutlet weak var timeLabel: UILabel!
     //分數表
@@ -78,6 +100,8 @@ class ViewController: UIViewController {
             self.imageView.image = UIImage(named: self.direction)
         }
     }
+    
+
 
     @IBAction func reset(_ sender: UIButton) {
         let alert = UIAlertController(title: "遊戲將重新開始", message: "按下確定後重新開始", preferredStyle: .alert)
