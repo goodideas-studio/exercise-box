@@ -37,6 +37,7 @@ class ViewController: UIViewController {
   numLabelCarrierView.translatesAutoresizingMaskIntoConstraints = false
     scoreLabel.text = String(0)
     numberLabel.text = ""
+    var gameSetting = promptWrongAnswer(title: "Welcome", msg: "If number is black, enter the number from left to right; If number is white, enter the number from right to left", actTitle: "Got it")
   }
 
   override func didReceiveMemoryWarning() {
@@ -129,7 +130,7 @@ class ViewController: UIViewController {
     } else {
       CheckReversedAnswer(answer: number, input: enterNumTextFd.text!)
     }
-    
+    enterNumTextFd.text = ""
   }
   
   func fromTopation() {

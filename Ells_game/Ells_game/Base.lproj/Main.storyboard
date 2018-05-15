@@ -106,11 +106,14 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHq-BB-tcW">
                                 <rect key="frame" x="234" y="475" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.51372549020000002" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UMl-yC-wH5"/>
                                     <constraint firstAttribute="width" constant="50" id="txN-mx-zC0"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="sentResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0cl-Ch-9uc"/>
                                 </connections>
