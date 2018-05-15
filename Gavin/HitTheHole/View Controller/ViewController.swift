@@ -25,8 +25,8 @@ class ViewController: UIViewController {
   private lazy var dice2AnimatedImages: [UIImage] = [UIImage]()
   
   private var isTapStart: Bool = false
-  private var defaultMoney: Int = 5000
-  private var totalMoney: Int = 0
+  private let defaultMoney: Int = 5000
+  private var remainMoney: Int = 0
   
   private enum Dice: Int {
     case dice1
@@ -37,8 +37,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    totalMoney = defaultMoney
-    moneyLabel.text = String(totalMoney)
+    remainMoney = defaultMoney
+    moneyLabel.text = String(remainMoney)
   }
   
   override func didReceiveMemoryWarning() {
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
       let totalDiceNumber = dice1Number + dice2Number
       settlement(totalDiceNumber)
     } else {
-      guard totalMoney > 0 else {
+      guard remainMoney > 0 else {
         sender.shake()
         errorLabel.isHidden = false
         errorLabel.text = "No Enough Money."
@@ -75,8 +75,9 @@ class ViewController: UIViewController {
       }
       
       resignBetMoney()
+      let moneyIsEnough: Bool = checkRemainMoney()
       
-      if Int(bigBet.text!)! > totalMoney || Int(smallBet.text!)! > totalMoney {
+      guard moneyIsEnough else {
         sender.shake()
         errorLabel.isHidden = false
         errorLabel.text = "Bet Money Exceeded Remain Money."
@@ -87,7 +88,7 @@ class ViewController: UIViewController {
       isTapStart = !isTapStart
       startButton.setImage(UIImage(named: "Cancel.png"), for: UIControlState.normal)
       
-      // Create Image Animation Image for Image View
+      // Create Image Animation
       createAnimationImage(Dice.dice1.rawValue, isReset: false)
       createAnimationImage(Dice.dice2.rawValue, isReset: false)
       
@@ -98,6 +99,8 @@ class ViewController: UIViewController {
   
   @IBAction func didTapResetButton(_ sender: Any) {
     errorLabel.isHidden = true
+    
+    remainMoney = defaultMoney
     moneyLabel.text = String(defaultMoney)
     
     bigBet.text = ""
@@ -132,11 +135,11 @@ class ViewController: UIViewController {
   
   private func settlement(_ diceNumber: Int) {
     if diceNumber < 7 {
-      totalMoney += Int(smallBet.text!)! - Int(bigBet.text!)!
+      remainMoney += Int(smallBet.text!)! - Int(bigBet.text!)!
     } else {
-      totalMoney += Int(bigBet.text!)! - Int(smallBet.text!)!
+      remainMoney += Int(bigBet.text!)! - Int(smallBet.text!)!
     }
-    moneyLabel.text = String(totalMoney)
+    moneyLabel.text = String(remainMoney)
   }
   
   private func resignBetMoney() {
@@ -147,6 +150,18 @@ class ViewController: UIViewController {
     if bigBet.text == "" {
       bigBet.text = "0"
     }
+  }
+  
+  private func checkRemainMoney() -> Bool {
+    let betSmallMoney = Int(smallBet.text!)!
+    let betBigMoney = Int(bigBet.text!)!
+    let betTotalMoney = betSmallMoney + betBigMoney
+    
+    if betSmallMoney > remainMoney || betSmallMoney > remainMoney || betTotalMoney > remainMoney {
+      return false
+    }
+    
+    return true
   }
 }
 
