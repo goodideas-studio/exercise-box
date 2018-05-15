@@ -108,7 +108,6 @@ class ViewController: UIViewController {
       fromTopation()
     case 1:
       fromBottomAnimation()
-   
     default:
       fromTopation()
     }
