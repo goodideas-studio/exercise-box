@@ -59,7 +59,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mw-he-jPf" userLabel="Start Button">
                                 <rect key="frame" x="139" y="293" width="96" height="96"/>
-                                <state key="normal" title="Button" image="Go"/>
+                                <state key="normal" image="Go"/>
                                 <connections>
                                     <action selector="didTapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEF-Xq-ag7"/>
                                 </connections>
@@ -94,12 +94,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sM-kL-Jjy" userLabel="Reset Button">
+                                <rect key="frame" x="327" y="35" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="pRE-dT-bvz"/>
+                                    <constraint firstAttribute="width" constant="32" id="znY-Uz-uEC"/>
+                                </constraints>
+                                <state key="normal" image="reset"/>
+                                <connections>
+                                    <action selector="didTapResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQg-rk-liz"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsN-EZ-a6N" userLabel="Illustrate View">
                                 <rect key="frame" x="16" y="41" width="343" height="589"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tJ-hT-6vj" userLabel="Exist Illustrate Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tJ-hT-6vj" userLabel="Exist Illustrate Button">
                                         <rect key="frame" x="8" y="493" width="327" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
                                         <state key="normal" title="Game Start"/>
                                         <connections>
@@ -123,10 +133,13 @@
                                 <constraints>
                                     <constraint firstItem="w65-Qf-26a" firstAttribute="top" secondItem="2FM-9m-8Yv" secondAttribute="bottom" constant="5" id="6cw-um-gUU"/>
                                     <constraint firstItem="2FM-9m-8Yv" firstAttribute="leading" secondItem="TsN-EZ-a6N" secondAttribute="leading" constant="8" id="LNa-TP-TrR"/>
+                                    <constraint firstItem="9tJ-hT-6vj" firstAttribute="leading" secondItem="TsN-EZ-a6N" secondAttribute="leading" constant="8" id="Odt-DK-10s"/>
                                     <constraint firstAttribute="trailing" secondItem="w65-Qf-26a" secondAttribute="trailing" constant="8" id="TGg-Ye-bVQ"/>
                                     <constraint firstItem="w65-Qf-26a" firstAttribute="top" secondItem="2FM-9m-8Yv" secondAttribute="bottom" constant="5" id="WdT-kx-fCu"/>
+                                    <constraint firstAttribute="bottom" secondItem="9tJ-hT-6vj" secondAttribute="bottom" constant="50" id="X2v-SR-R2O"/>
                                     <constraint firstItem="w65-Qf-26a" firstAttribute="leading" secondItem="TsN-EZ-a6N" secondAttribute="leading" constant="8" id="h8h-Ay-yuM"/>
                                     <constraint firstItem="2FM-9m-8Yv" firstAttribute="top" secondItem="TsN-EZ-a6N" secondAttribute="top" constant="96" id="hiS-hL-NCT"/>
+                                    <constraint firstAttribute="trailing" secondItem="9tJ-hT-6vj" secondAttribute="trailing" constant="8" id="qvU-Vt-pBq"/>
                                     <constraint firstAttribute="trailing" secondItem="2FM-9m-8Yv" secondAttribute="trailing" constant="8" id="y9h-71-JDl"/>
                                 </constraints>
                             </view>
@@ -150,12 +163,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8mw-he-jPf" secondAttribute="trailing" constant="140" id="PDn-Lm-cXa"/>
                             <constraint firstItem="OMq-x3-wvi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="POn-9F-61I"/>
                             <constraint firstItem="b8w-LR-Lof" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="XM4-yg-g4F"/>
+                            <constraint firstItem="4sM-kL-Jjy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Xif-pP-CJX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NPM-gk-vqZ" secondAttribute="bottom" constant="142" id="ZxA-G0-WUl"/>
                             <constraint firstItem="b8w-LR-Lof" firstAttribute="leading" secondItem="epX-kf-JJy" secondAttribute="trailing" constant="8.5" id="aIM-lh-HMA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hQi-py-pUC" secondAttribute="trailing" constant="16" id="aTV-S8-o9h"/>
                             <constraint firstItem="OMq-x3-wvi" firstAttribute="top" secondItem="epX-kf-JJy" secondAttribute="bottom" constant="68.5" id="bTa-9s-yEl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TsN-EZ-a6N" secondAttribute="bottom" constant="37" id="c1C-gq-jMK"/>
                             <constraint firstItem="NPM-gk-vqZ" firstAttribute="top" secondItem="URG-ST-r9Z" secondAttribute="bottom" constant="16.5" id="fXL-Aj-JfA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4sM-kL-Jjy" secondAttribute="trailing" constant="16" id="gHh-Sd-FsT"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hYu-Ea-fnA" secondAttribute="trailing" constant="20" symbolic="YES" id="hbL-Et-Q8V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NPM-gk-vqZ" secondAttribute="trailing" constant="79" id="kUc-vK-Wdw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OMq-x3-wvi" secondAttribute="trailing" constant="60" id="koW-Cd-LSs"/>
@@ -192,5 +207,6 @@
     <resources>
         <image name="Go" width="96" height="96"/>
         <image name="dice1" width="128" height="128"/>
+        <image name="reset" width="96" height="96"/>
     </resources>
 </document>

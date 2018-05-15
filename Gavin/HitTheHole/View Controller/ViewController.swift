@@ -25,7 +25,8 @@ class ViewController: UIViewController {
   private lazy var dice2AnimatedImages: [UIImage] = [UIImage]()
   
   private var isTapStart: Bool = false
-  private var totalMoney: Int = 5000
+  private var defaultMoney: Int = 5000
+  private var totalMoney: Int = 0
   
   private enum Dice: Int {
     case dice1
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    totalMoney = defaultMoney
     moneyLabel.text = String(totalMoney)
   }
   
@@ -86,27 +88,43 @@ class ViewController: UIViewController {
       startButton.setImage(UIImage(named: "Cancel.png"), for: UIControlState.normal)
       
       // Create Image Animation Image for Image View
-      createAnimationImage(Dice.dice1.rawValue)
-      createAnimationImage(Dice.dice2.rawValue)
+      createAnimationImage(Dice.dice1.rawValue, isReset: false)
+      createAnimationImage(Dice.dice2.rawValue, isReset: false)
       
       dice1ImageView.startAnimating()
       dice2ImageView.startAnimating()
     }
   }
   
-  private func createAnimationImage(_ diceNumber: Int) {
-    for photoIndes in 1...6 {
-      let imageName = "dice\(photoIndes).png"
-      
-      switch diceNumber {
-      case Dice.dice1.rawValue:
-        dice1AnimatedImages.append(UIImage(named: imageName)!)
-        dice1ImageView.animationImages = dice1AnimatedImages
-        dice1ImageView.animationDuration = 0.3
-      default:
-        dice2AnimatedImages.append(UIImage(named: imageName)!)
-        dice2ImageView.animationImages = dice2AnimatedImages
-        dice2ImageView.animationDuration = 0.5
+  @IBAction func didTapResetButton(_ sender: Any) {
+    errorLabel.isHidden = true
+    moneyLabel.text = String(defaultMoney)
+    
+    bigBet.text = ""
+    smallBet.text = ""
+    
+    createAnimationImage(Dice.dice1.rawValue, isReset: true)
+    createAnimationImage(Dice.dice2.rawValue, isReset: true)
+  }
+  
+  private func createAnimationImage(_ diceNumber: Int, isReset: Bool) {
+    if isReset {
+      dice1ImageView.image = UIImage(named: "dice1.png")
+      dice2ImageView.image = UIImage(named: "dice1.png")
+    } else {
+      for photoIndes in 1...6 {
+        let imageName = "dice\(photoIndes).png"
+        
+        switch diceNumber {
+        case Dice.dice1.rawValue:
+          dice1AnimatedImages.append(UIImage(named: imageName)!)
+          dice1ImageView.animationImages = dice1AnimatedImages
+          dice1ImageView.animationDuration = 0.3
+        default:
+          dice2AnimatedImages.append(UIImage(named: imageName)!)
+          dice2ImageView.animationImages = dice2AnimatedImages
+          dice2ImageView.animationDuration = 0.5
+        }
       }
     }
   }
