@@ -30,6 +30,7 @@
 		A5324FD420AAB46600198E03 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A594B78020AAAA910066C262 /* Quiz2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz2ViewController.swift; sourceTree = "<group>"; };
 		A594B78220AAAE550066C262 /* Quiz3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz3ViewController.swift; sourceTree = "<group>"; };
+		A5AC016120AAE847008ADE9F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		A522D7B520AA7D87009D7236 = {
 			isa = PBXGroup;
 			children = (
+				A5AC016120AAE847008ADE9F /* README.md */,
 				A522D7C020AA7D87009D7236 /* gamePractice */,
 				A522D7BF20AA7D87009D7236 /* Products */,
 			);
