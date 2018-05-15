@@ -107,17 +107,22 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 //        
 //    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        scoreLabel.text = "\(score)"
-        score += 50
-        print("Hit Me \(score) times")
+        
+        
+       
         
         if score == 0 {
             resetDisplay.titleLabel?.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-            
         }else {
             resetDisplay.titleLabel?.textColor  = #colorLiteral(red: 0.5527273417, green: 0.5872040987, blue: 1, alpha: 1)
-            
         }
+        
+        if cellTrueArray[indexPath.row] {
+            score += 50
+            scoreLabel.text = "\(score)"
+            print("Hit Me \(score) times")
+        }
+        
     }
  
     override func viewWillLayoutSubviews() {
