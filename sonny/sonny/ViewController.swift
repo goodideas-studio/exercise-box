@@ -67,19 +67,31 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! myCollectionViewCell
         cell.cellImage.image = UIImage(named: cellImageArray[indexPath.row])
+        cell.cellImage.isHidden = true
+        
         
         switch indexPath.row {
         case 0 :
-            cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
             
+            cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            if  cellTrueArray[indexPath.row] == true {
+                cell.cellImage.isHidden = false
+            }
         case 1 :
             cell.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-         
+            if  cellTrueArray[indexPath.row] == true {
+                cell.cellImage.isHidden = false
+            }
         case 2 :
             cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            
+            if  cellTrueArray[indexPath.row] == true {
+                cell.cellImage.isHidden = false
+            }
         default :
             cell.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+            if  cellTrueArray[indexPath.row] == true {
+                cell.cellImage.isHidden = false
+            }
            
         }
         
@@ -133,6 +145,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //update time label.
         timeLabel.text = "\(seconds)"
         print(seconds)
+        myCollectionView.reloadData()
     }
     
     func randomCell() {
