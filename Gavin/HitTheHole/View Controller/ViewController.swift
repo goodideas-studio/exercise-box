@@ -107,6 +107,7 @@ class ViewController: UIViewController {
     createAnimationImage(Dice.dice2.rawValue, isReset: true)
   }
   
+  // MARK: - Help Method
   private func createAnimationImage(_ diceNumber: Int, isReset: Bool) {
     if isReset {
       dice1ImageView.image = UIImage(named: "dice1.png")
