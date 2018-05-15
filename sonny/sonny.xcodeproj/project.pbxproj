@@ -12,6 +12,7 @@
 		E074A4AB20AA794C0081EF84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E074A4A920AA794C0081EF84 /* Main.storyboard */; };
 		E074A4AD20AA794D0081EF84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E074A4AC20AA794D0081EF84 /* Assets.xcassets */; };
 		E074A4B020AA794D0081EF84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E074A4AE20AA794D0081EF84 /* LaunchScreen.storyboard */; };
+		E074A4B820AA84050081EF84 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E074A4B720AA84050081EF84 /* myCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E074A4AC20AA794D0081EF84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E074A4AF20AA794D0081EF84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E074A4B120AA794D0081EF84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E074A4B720AA84050081EF84 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				E074A4A520AA794C0081EF84 /* AppDelegate.swift */,
 				E074A4A720AA794C0081EF84 /* ViewController.swift */,
+				E074A4B720AA84050081EF84 /* myCollectionViewCell.swift */,
 				E074A4A920AA794C0081EF84 /* Main.storyboard */,
 				E074A4AC20AA794D0081EF84 /* Assets.xcassets */,
 				E074A4AE20AA794D0081EF84 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E074A4B820AA84050081EF84 /* myCollectionViewCell.swift in Sources */,
 				E074A4A820AA794C0081EF84 /* ViewController.swift in Sources */,
 				E074A4A620AA794C0081EF84 /* AppDelegate.swift in Sources */,
 			);
