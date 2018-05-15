@@ -15,6 +15,7 @@
 		ACB6701320AA71F6009B6A16 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6701220AA71F6009B6A16 /* GameTests.swift */; };
 		ACB6701E20AA71F6009B6A16 /* GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6701D20AA71F6009B6A16 /* GameUITests.swift */; };
 		ACB6702C20AA8706009B6A16 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB6702B20AA86F6009B6A16 /* Default-568h@2x.png */; };
+		ACB6702F20AA87E0009B6A16 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB6702E20AA87DF009B6A16 /* Billabong.ttf */; };
 		ACB6703120AA894E009B6A16 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6703020AA894E009B6A16 /* GameVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AC9FA08B20AACCB600FB5E66 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		ACB66FFA20AA71F4009B6A16 /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB66FFD20AA71F4009B6A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB66FFF20AA71F4009B6A16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +51,7 @@
 		ACB6701D20AA71F6009B6A16 /* GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUITests.swift; sourceTree = "<group>"; };
 		ACB6701F20AA71F6009B6A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB6702B20AA86F6009B6A16 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		ACB6702E20AA87DF009B6A16 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Billabong.ttf; path = ../../../Downloads/Billabong.ttf; sourceTree = "<group>"; };
 		ACB6703020AA894E009B6A16 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +104,7 @@
 		ACB66FFC20AA71F4009B6A16 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				AC9FA08B20AACCB600FB5E66 /* Billabong.ttf */,
+				ACB6702E20AA87DF009B6A16 /* Billabong.ttf */,
 				ACB66FFD20AA71F4009B6A16 /* AppDelegate.swift */,
 				ACB66FFF20AA71F4009B6A16 /* ViewController.swift */,
 				ACB6700120AA71F4009B6A16 /* Main.storyboard */,
@@ -240,6 +241,7 @@
 				ACB6700820AA71F6009B6A16 /* LaunchScreen.storyboard in Resources */,
 				ACB6702C20AA8706009B6A16 /* Default-568h@2x.png in Resources */,
 				ACB6700520AA71F5009B6A16 /* Assets.xcassets in Resources */,
+				ACB6702F20AA87E0009B6A16 /* Billabong.ttf in Resources */,
 				ACB6700320AA71F4009B6A16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
