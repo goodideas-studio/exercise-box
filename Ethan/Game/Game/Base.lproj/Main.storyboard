@@ -19,6 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="KSG-wU-Dzs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-qA-Z0b">
                                 <rect key="frame" x="149.5" y="300" width="75" height="67"/>
                             </imageView>
@@ -50,10 +53,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="KSG-wU-Dzs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0mq-Wh-DIv"/>
                             <constraint firstItem="OSe-qA-Z0b" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6pf-jG-sni"/>
                             <constraint firstItem="OSe-qA-Z0b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="UNQ-yy-Veh"/>
+                            <constraint firstItem="KSG-wU-Dzs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Zq6-ve-dHs"/>
                             <constraint firstItem="OSe-qA-Z0b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aqO-Hr-79Y"/>
+                            <constraint firstItem="KSG-wU-Dzs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gSI-mO-VYn"/>
                             <constraint firstItem="OSe-qA-Z0b" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="nxY-4u-zLk"/>
+                            <constraint firstItem="KSG-wU-Dzs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q0X-ES-k5X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -94,4 +101,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="243" height="208"/>
+    </resources>
 </document>

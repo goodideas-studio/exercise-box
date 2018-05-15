@@ -10,22 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //遊戲進行與否
+    var isGamePlaying:Bool = false
     //處理時間到了以後alert重複Present的問題
     var alertPresentedForCountDown:Bool = false
     //倒數計時
     var timer:Timer?
-    var counter = 5{
+    var counter = 20{
         didSet{
             self.timeLabel.text = "時間:\(counter)秒"
         }
     }
     //時間
     @IBOutlet weak var timeLabel: UILabel!
-    
     //分數表
     @IBOutlet weak var scoreLabel: UILabel!
-    
-    let arrowArray = ["blueUp","blueDown","blueRight","blueLeft"]
+    //裡面的圖案種類
+    let arrowArray = ["blueUp","blueDown","blueRight","blueLeft","redUp","redDown","redLeft","redRight"]
+    //手勢的方向
+    var gestureDirection:String = ""
+    //圖片的方向
     var direction:String = ""
     var totalScore:Int = 0{
         didSet{
@@ -33,30 +37,46 @@ class ViewController: UIViewController {
         }
     }
     
-    //自訂方法
-    func rule(direction:String){
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-            self.imageView.frame.origin.x = self.imageView.frame.origin.x - 50
-            self.imageView.alpha = CGFloat(0.0)
-            
-        }, completion: nil)
-        if self.direction == direction{
-            self.totalScore += 20
+    func rule(direction:String,gestureDirection:String){
+        if self.isGamePlaying{
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.imageView.frame.origin.x = self.imageView.frame.origin.x - 50
+                self.imageView.alpha = CGFloat(0.0)
+            }, completion: nil)
+            if direction.contains("blue"){
+                if direction == "blueUp" && gestureDirection == "Up"{
+                    self.totalScore += 20
+                }else if direction == "blueDown" && gestureDirection == "Down"{
+                    self.totalScore += 20
+                }else if direction == "blueLeft" && gestureDirection == "Left"{
+                    self.totalScore += 20
+                }else if direction == "blueRight" && gestureDirection == "Right"{
+                    self.totalScore += 20
+                }
+            }else{
+                if direction == "redUp" && gestureDirection == "Down"{
+                    self.totalScore += 20
+                }else if direction == "redDown" && gestureDirection == "Up"{
+                    self.totalScore += 20
+                }else if direction == "redLeft" && gestureDirection == "Right"{
+                    self.totalScore += 20
+                }else if direction == "redRight" && gestureDirection == "Left"{
+                    self.totalScore += 20
+                }
+            }
+            self.direction = self.arrowArray[Int(arc4random_uniform(UInt32(self.arrowArray.count)))]
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+                self.imageView.frame.origin.x = self.imageView.frame.origin.x + 50
+                self.imageView.alpha = CGFloat(1.0)
+            }, completion: nil)
+            self.imageView.image = UIImage(named: self.direction)
         }
-        self.direction = self.arrowArray[Int(arc4random_uniform(UInt32(self.arrowArray.count)))]
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
-            self.imageView.frame.origin.x = self.imageView.frame.origin.x + 50           
-            self.imageView.alpha = CGFloat(1.0)
-        }, completion: nil)
-        
-        self.imageView.image = UIImage(named: self.direction)
-        
-        print(self.direction)
     }
 
     @IBAction func reset(_ sender: UIButton) {
         let alert = UIAlertController(title: "遊戲將重新開始", message: "按下確定後重新開始", preferredStyle: .alert)
         let action = UIAlertAction(title: "確定", style: .default) { (action) in
+            self.isGamePlaying = true
             self.totalScore = 0
             self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
             //按下確定後要再把alertPresetForCountDown改成false
@@ -67,19 +87,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        rule(direction: "blueRight")
+        self.gestureDirection = "Right"
+        rule(direction: self.direction, gestureDirection: self.gestureDirection)
     }
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
-        rule(direction: "blueUp")
+        self.gestureDirection = "Up"
+        rule(direction: self.direction, gestureDirection: self.gestureDirection)
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
-        rule(direction: "blueLeft")
+        self.gestureDirection = "Left"
+        rule(direction: self.direction, gestureDirection: self.gestureDirection)
     }
     
     @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
-        rule(direction: "blueDown")
+        self.gestureDirection = "Down"
+        rule(direction: self.direction, gestureDirection: self.gestureDirection)
     }
     
     
@@ -93,8 +117,9 @@ class ViewController: UIViewController {
             if self.alertPresentedForCountDown == false{
                 let alert = UIAlertController(title: "時間到", message: "遊戲結束，您的得分為\(self.totalScore)", preferredStyle: .alert)
                 let action = UIAlertAction(title: "確定", style: .default) { (action) in
+                    self.isGamePlaying = false
                     self.timer?.invalidate()
-                    self.counter = 5
+                    self.counter = 20
                 }
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
@@ -112,12 +137,13 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         let alert = UIAlertController(title: "遊戲開始", message: "按下確定後遊戲開始", preferredStyle: .alert)
         let action = UIAlertAction(title: "確定", style: .default) { (action) in
+            self.isGamePlaying = true
+            self.direction = self.arrowArray[Int(arc4random_uniform(UInt32(self.arrowArray.count)))]
+            self.imageView.image = UIImage(named: self.direction)
             self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
-        self.direction = self.arrowArray[Int(arc4random_uniform(UInt32(self.arrowArray.count)))]
-        self.imageView.image = UIImage(named: self.direction)
     }
     
     override func didReceiveMemoryWarning() {
