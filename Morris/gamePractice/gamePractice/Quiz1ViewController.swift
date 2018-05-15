@@ -16,13 +16,12 @@ class Quiz1ViewController: UIViewController {
     var scoreInQuiz1:Int = 0
     @IBAction func giveUpButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "goQuiz2", sender: self)
-        print("giveUP\(scoreInQuiz1)")
-        
+        print("scoreInQuiz1\(scoreInQuiz1)")
     }
     @IBAction func continuePressed(_ sender: Any) {
-        
+        scoreInQuiz1 += 1
         performSegue(withIdentifier: "goQuiz2", sender: self)
-        
+        print("scoreInQuiz1\(scoreInQuiz1)")
     }
     @IBOutlet var animationView: UIView!
     @IBOutlet var introView: UIView!
@@ -32,8 +31,6 @@ class Quiz1ViewController: UIViewController {
     @IBAction func correctButtonPressed(_ sender: UIButton) {
         continueOutlet.isEnabled = true
         displayPickerView(false)
-        scoreInQuiz1 += 1
-        print("quiz1\(scoreInQuiz1)")
     }
     @IBAction func okPressed(_ sender: Any) {
         
@@ -43,7 +40,7 @@ class Quiz1ViewController: UIViewController {
     
     
     @IBAction func guessButton(_ sender: UIButton) {
-        isCorrect = true
+        
         displayPickerView(true)
     }
     

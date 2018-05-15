@@ -9,37 +9,41 @@
 import UIKit
 
 class Quiz3ViewController: UIViewController {
+
     var scoreFromQuiz2:Int?
-    var scoreInQuiz3:Int = 0
+    var scoreInQuiz3:Int?
     
     @IBAction func giveUpButton(_ sender: UIBarButtonItem) {
+        scoreInQuiz3 = 0 + scoreFromQuiz2!
         performSegue(withIdentifier: "goResult", sender: self)
+        print("ScoreInQuiz3\(scoreInQuiz3)")
     }
     
     @IBOutlet var animationView: UIView!
     
     @IBAction func goResultButton(_ sender: UIButton) {
+        if let score = scoreFromQuiz2{
+            scoreInQuiz3 = score + 1
+        }
         performSegue(withIdentifier: "goResult", sender: self)
-        displayPickerView(false)
 
+        print("ScoreInQuiz3\(scoreInQuiz3)")
     }
     
     @IBAction func guessAnswerLeftPressed(_ sender: UIButton) {
-        if let score = scoreFromQuiz2 {
-            scoreInQuiz3 = score + 1
-        }
-        print("quiz3\(scoreInQuiz3)")
+        
+
+    
         displayPickerView(true)
     }
     @IBAction func guessAnswerMidPressed(_ sender: Any) {
-        scoreInQuiz3 += 1
-        print("quiz3\(scoreInQuiz3)")
+
         
         displayPickerView(true)
     }
     @IBAction func guessAnswerRightPressed(_ sender: UIButton) {
-        scoreInQuiz3 += 1
-        print("quiz3\(scoreInQuiz3)")
+
+    
         
         displayPickerView(true)
     }
@@ -56,13 +60,9 @@ class Quiz3ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        
         if let vc = segue.destination as? ResultViewController {
             vc.scoreForResult = scoreInQuiz3
-            
         }
     }
     

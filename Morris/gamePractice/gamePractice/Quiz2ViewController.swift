@@ -10,9 +10,10 @@ import UIKit
 
 class Quiz2ViewController:UIViewController {
     var scoreFromQuiz1:Int?
-    var scoreInQuiz2:Int = 0
-    
+    var scoreInQuiz2:Int?
     @IBAction func giveUpButton(_ sender: UIBarButtonItem) {
+        scoreInQuiz2 = 0 + scoreFromQuiz1!
+        print("ScoreInQuiz2\(scoreInQuiz2)")
         performSegue(withIdentifier: "goQuiz3", sender: self)
 //        print("giveUP\(scoreInQuiz2)")
     }
@@ -21,16 +22,16 @@ class Quiz2ViewController:UIViewController {
     @IBAction func correctButtonPressed(_ sender: UIButton) {
         continueOutlet.isEnabled = true
         displayPickerView(false)
-        if let score = scoreFromQuiz1{
-            scoreInQuiz2 = score + 1
-        }
-        print("quiz2\(scoreInQuiz2)")
+        
 
     }
     
     @IBOutlet weak var continueOutlet: UIBarButtonItem!
     @IBAction func continuePressed(_ sender: UIBarButtonItem) {
-        
+        if let score = scoreFromQuiz1{
+            scoreInQuiz2 = score + 1
+        }
+        print("ScoreInQuiz2\(scoreInQuiz2)")
         performSegue(withIdentifier: "goQuiz3", sender: self)
 
     }
@@ -52,11 +53,11 @@ class Quiz2ViewController:UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let vc = segue.destination as? Quiz3ViewController {
-            vc.scoreInQuiz3 = scoreInQuiz2
+            vc.scoreFromQuiz2 = scoreInQuiz2
         }
     }
+
     
 
     

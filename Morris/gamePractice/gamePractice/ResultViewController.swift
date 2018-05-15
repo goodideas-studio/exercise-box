@@ -9,7 +9,7 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    var scoreForResult:Int = 0
+    var scoreForResult:Int?
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var restartOutlet: UIButton!
     
@@ -27,7 +27,8 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultLabel.text = "\(scoreForResult) 題！"
+        
+        resultLabel.text = "\(scoreForResult!) 題！"
         restartOutlet.layer.cornerRadius = 30
         
     }
