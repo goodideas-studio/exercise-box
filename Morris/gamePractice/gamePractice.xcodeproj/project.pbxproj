@@ -12,6 +12,11 @@
 		A522D7C720AA7D87009D7236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A522D7C520AA7D87009D7236 /* Main.storyboard */; };
 		A522D7C920AA7D89009D7236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A522D7C820AA7D89009D7236 /* Assets.xcassets */; };
 		A522D7CC20AA7D89009D7236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A522D7CA20AA7D89009D7236 /* LaunchScreen.storyboard */; };
+		A522D7D420AA854B009D7236 /* Quiz1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A522D7D320AA854B009D7236 /* Quiz1ViewController.swift */; };
+		A5324FD320AAB23300198E03 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5324FD220AAB23300198E03 /* ScoreData.swift */; };
+		A5324FD520AAB46600198E03 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5324FD420AAB46600198E03 /* ResultViewController.swift */; };
+		A594B78120AAAA910066C262 /* Quiz2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594B78020AAAA910066C262 /* Quiz2ViewController.swift */; };
+		A594B78320AAAE550066C262 /* Quiz3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594B78220AAAE550066C262 /* Quiz3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		A522D7C820AA7D89009D7236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A522D7CB20AA7D89009D7236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A522D7CD20AA7D89009D7236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A522D7D320AA854B009D7236 /* Quiz1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz1ViewController.swift; sourceTree = "<group>"; };
+		A5324FD220AAB23300198E03 /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
+		A5324FD420AAB46600198E03 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		A594B78020AAAA910066C262 /* Quiz2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz2ViewController.swift; sourceTree = "<group>"; };
+		A594B78220AAAE550066C262 /* Quiz3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +67,11 @@
 				A522D7C120AA7D87009D7236 /* AppDelegate.swift */,
 				A522D7C320AA7D87009D7236 /* ViewController.swift */,
 				A522D7C520AA7D87009D7236 /* Main.storyboard */,
+				A5324FD220AAB23300198E03 /* ScoreData.swift */,
+				A522D7D320AA854B009D7236 /* Quiz1ViewController.swift */,
+				A594B78020AAAA910066C262 /* Quiz2ViewController.swift */,
+				A594B78220AAAE550066C262 /* Quiz3ViewController.swift */,
+				A5324FD420AAB46600198E03 /* ResultViewController.swift */,
 				A522D7C820AA7D89009D7236 /* Assets.xcassets */,
 				A522D7CA20AA7D89009D7236 /* LaunchScreen.storyboard */,
 				A522D7CD20AA7D89009D7236 /* Info.plist */,
@@ -136,7 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A522D7C420AA7D87009D7236 /* ViewController.swift in Sources */,
+				A522D7D420AA854B009D7236 /* Quiz1ViewController.swift in Sources */,
+				A5324FD520AAB46600198E03 /* ResultViewController.swift in Sources */,
 				A522D7C220AA7D87009D7236 /* AppDelegate.swift in Sources */,
+				A594B78320AAAE550066C262 /* Quiz3ViewController.swift in Sources */,
+				A5324FD320AAB23300198E03 /* ScoreData.swift in Sources */,
+				A594B78120AAAA910066C262 /* Quiz2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
