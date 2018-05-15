@@ -16,4 +16,4 @@
 
 歡迎來到"來喝杯"酒吧,客人會不斷進來點一杯酒,盡可能滿足客人吧
 時間限時一分鐘,看你能得到多少分數
-![](https://i.imgur.com/eryuRp4.gif)
+![Alt text](game.gif)
