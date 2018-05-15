@@ -13,6 +13,8 @@
 		5E0C69FA20AA6EEB001E67D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C69F920AA6EEB001E67D9 /* Assets.xcassets */; };
 		5E0C69FD20AA6EEB001E67D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C69FB20AA6EEB001E67D9 /* LaunchScreen.storyboard */; };
 		5E0C6A0520AAA339001E67D9 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C6A0420AAA339001E67D9 /* PlayerModel.swift */; };
+		5E0C6A0820AAB581001E67D9 /* RPSGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C6A0720AAB580001E67D9 /* RPSGame.png */; };
+		5E0C6A0A20AAB5F3001E67D9 /* RestartGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C6A0920AAB5F3001E67D9 /* RestartGame.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		5E0C69FC20AA6EEB001E67D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0C69FE20AA6EEB001E67D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E0C6A0420AAA339001E67D9 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		5E0C6A0620AAB429001E67D9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5E0C6A0720AAB580001E67D9 /* RPSGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RPSGame.png; sourceTree = "<group>"; };
+		5E0C6A0920AAB5F3001E67D9 /* RestartGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RestartGame.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +45,9 @@
 		5E0C69E620AA6EEB001E67D9 = {
 			isa = PBXGroup;
 			children = (
+				5E0C6A0620AAB429001E67D9 /* README.md */,
+				5E0C6A0720AAB580001E67D9 /* RPSGame.png */,
+				5E0C6A0920AAB5F3001E67D9 /* RestartGame.png */,
 				5E0C69F120AA6EEB001E67D9 /* Game */,
 				5E0C69F020AA6EEB001E67D9 /* Products */,
 			);
@@ -128,6 +136,8 @@
 			files = (
 				5E0C69FD20AA6EEB001E67D9 /* LaunchScreen.storyboard in Resources */,
 				5E0C69FA20AA6EEB001E67D9 /* Assets.xcassets in Resources */,
+				5E0C6A0A20AAB5F3001E67D9 /* RestartGame.png in Resources */,
+				5E0C6A0820AAB581001E67D9 /* RPSGame.png in Resources */,
 				5E0C69F820AA6EEB001E67D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
