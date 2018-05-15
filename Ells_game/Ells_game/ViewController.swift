@@ -32,6 +32,7 @@ class ViewController: UIViewController {
   var score = 0
   var check = false
   var number = ""
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   numLabelCarrierView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,18 +55,9 @@ class ViewController: UIViewController {
     number = numA + numB + numC + numD
     return number
   }
-  func generateReversedRandomNum() -> String {
-    var numA = String(arc4random_uniform(10))
-    var numB = String(arc4random_uniform(10))
-    var numC = String(arc4random_uniform(10))
-    var numD = String(arc4random_uniform(10))
-    
-    //var returnReversedNum
-    number = numD + numC + numB + numA
-    return number
-  }
+
+  
   func CheckAnswer(answer: String, input text: String) -> Bool {
- 
     print( "answer is \(answer)")
     if answer == text {
       score += 10
@@ -95,7 +87,6 @@ class ViewController: UIViewController {
       check = false
       var alert = promptWrongAnswer(title: "Boomer", msg: "sorry", actTitle: "good try")
       self.present(alert, animated: true, completion: nil)
-
     }
     return check
   }
@@ -139,9 +130,11 @@ class ViewController: UIViewController {
     print(number)
     numberLabel.alpha = 1.0
     self.numberLabel.textColor = .black
-    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+    self.numLabelCarrierView.frame = CGRect(x: 0, y: 160, width: self.numLabelCarrierView.frame.width, height: self.numLabelCarrierView.frame.height)
+    UIView.animate(withDuration: 1.2, delay: 0, options: .curveEaseOut, animations: {
       self.numLabelCarrierView.backgroundColor = .white
       self.numberLabel.alpha = 0
+      self.numLabelCarrierView.frame = CGRect(x: self.view.frame.width, y: 160, width: self.numLabelCarrierView.frame.width, height: self.numLabelCarrierView.frame.height)
       self.numLabelCarrierView.layoutIfNeeded()
     }, completion: {_ in
     })
@@ -149,17 +142,18 @@ class ViewController: UIViewController {
   }
   
   func fromBottomAnimation() {
-    number = generateReversedRandomNum()
+    number = generateRandomNum()
     check = false
     numberLabel.text = number
     numberLabel.alpha = 1.0
-    
-    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+    self.numLabelCarrierView.frame = CGRect(x: self.view.frame.width, y: 160, width: self.numLabelCarrierView.frame.width, height: self.numLabelCarrierView.frame.height)
+    UIView.animate(withDuration: 1.2, delay: 0, options: .curveEaseOut, animations: {
       self.numLabelCarrierView.backgroundColor = .black
       self.numberLabel.textColor = .white
       
       self.numberLabel.alpha = 0
       self.numLabelCarrierView.layoutIfNeeded()
+      self.numLabelCarrierView.frame = CGRect(x: 0, y: 160, width: self.numLabelCarrierView.frame.width, height: self.numLabelCarrierView.frame.height)
     }, completion: {_ in
       self.numberLabel.textColor = .white
     })
