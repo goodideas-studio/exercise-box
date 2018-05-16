@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC23409420AB6723002FE886 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ACB66FFA20AA71F4009B6A16 /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB66FFD20AA71F4009B6A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB66FFF20AA71F4009B6A16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		ACB66FF120AA71F3009B6A16 = {
 			isa = PBXGroup;
 			children = (
+				AC23409420AB6723002FE886 /* README.md */,
 				ACB6702B20AA86F6009B6A16 /* Default-568h@2x.png */,
 				ACB66FFC20AA71F4009B6A16 /* Game */,
 				ACB6701120AA71F6009B6A16 /* GameTests */,

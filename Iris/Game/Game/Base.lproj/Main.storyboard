@@ -67,17 +67,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="Wu2-l2-JRI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="Wu2-l2-JRI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="AK3-Oo-XSd" appends="YES" id="KFq-sS-sBi"/>
                                     <outletCollection property="gestureRecognizers" destination="nk4-oX-scQ" appends="YES" id="Q32-7h-Ess"/>
                                     <outletCollection property="gestureRecognizers" destination="mJK-lD-KZ9" appends="YES" id="hEb-Ao-2dh"/>
+                                    <outletCollection property="gestureRecognizers" destination="Na5-Bj-vkS" appends="YES" id="mIr-ok-TA7"/>
                                 </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Too-8B-Qob">
-                                <rect key="frame" x="138" y="456" width="100" height="122.5"/>
+                                <rect key="frame" x="138" y="456" width="100" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
@@ -95,17 +96,52 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lB9-WM-TdI">
-                                <rect key="frame" x="138" y="90" width="100" height="122.5"/>
+                                <rect key="frame" x="138" y="90" width="100" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-Oz-Fth">
-                                <rect key="frame" x="308" y="121" width="50" height="35"/>
+                                <rect key="frame" x="308" y="134" width="50" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mx-TT-NBr">
                                 <rect key="frame" x="333" y="583" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4D-S9-icL">
+                                <rect key="frame" x="308" y="149" width="50" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7k-B4-ys2">
+                                <rect key="frame" x="67" y="622" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOU LOSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCb-Xh-z4R">
+                                        <rect key="frame" x="64" y="22" width="113" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="練練再來" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y60-Oq-1sr">
+                                        <rect key="frame" x="85" y="54" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcZ-vB-yYb">
+                                        <rect key="frame" x="105" y="83" width="31" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="確認">
+                                            <color key="titleColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resultConfirmBtn:" destination="mv0-ii-Qpj" eventType="touchUpInside" id="mSr-lV-CNE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -121,10 +157,14 @@
                     </view>
                     <connections>
                         <outlet property="bankerCardImage" destination="aRd-Oz-Fth" id="1QC-Cf-Awr"/>
+                        <outlet property="dealBtnOutlet" destination="aS8-Kx-dNe" id="Z5Z-l5-Fl7"/>
                         <outlet property="gamblingChipsImage" destination="5mx-TT-NBr" id="IeJ-Vc-Whr"/>
                         <outlet property="gamerChipsLabel" destination="pAL-an-0hz" id="nfb-2n-wyZ"/>
+                        <outlet property="playerCardImage" destination="W4D-S9-icL" id="2m9-aY-KbN"/>
                         <outlet property="playerReadyImage" destination="Too-8B-Qob" id="ffc-Yf-8Du"/>
                         <outlet property="readyPlaceImage" destination="lB9-WM-TdI" id="AvE-5k-1Su"/>
+                        <outlet property="resultView" destination="D7k-B4-ys2" id="59k-mN-oqE"/>
+                        <outlet property="tableView" destination="Wu2-l2-JRI" id="jBN-Xm-1q5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3K5-7F-D4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,6 +181,11 @@
                 <swipeGestureRecognizer direction="down" id="mJK-lD-KZ9">
                     <connections>
                         <action selector="downGesture:" destination="mv0-ii-Qpj" id="upw-l6-3TP"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Na5-Bj-vkS">
+                    <connections>
+                        <action selector="leftGesture:" destination="mv0-ii-Qpj" id="WR1-Di-eZ3"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
