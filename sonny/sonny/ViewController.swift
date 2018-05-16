@@ -10,12 +10,18 @@ import UIKit
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
+    //是否正在遊戲中，避免"GO" btn可一直被點選，造成 timer 越跑越快
     var isplaying = false
+    //時間顯示變數
     var seconds:Int = 0
+    //分數顯示變數
     var score:Int = 0
+    //Random選取 1~4 的數字
     var myRandom = Int(arc4random_uniform(4))
     var timer = Timer()
+    //設定 cell 內的 image 是否 ishiden ，初始為 false
     var cellTrueArray = [false,false,false,false]
+    //設定 Cell image
     var cellImageArray = ["hulk","deadpool","batman","ironman"]
     
     @IBOutlet weak var myCollectionView: UICollectionView!
@@ -28,8 +34,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBAction func startBtn(_ sender: UIButton) {
         
-        
         print("startBtn press")
+        //如果遊戲沒有進行，才會執行 runTimer
         if isplaying == false {
             runTimer()
             isplaying = true
@@ -38,6 +44,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     @IBAction func resetBtn(_ sender: UIButton) {
+        //停止 timer
         timer.invalidate()
         score = 0
         seconds = 0
@@ -46,7 +53,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         isplaying = false
         cellTrueArray = [false,false,false,false]
         print(seconds)
-
+//        cell.cellImage.isHidden = true
     }
 
     
@@ -107,16 +114,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 //        
 //    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-       
-        
+
         if score == 0 {
             resetDisplay.titleLabel?.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         }else {
             resetDisplay.titleLabel?.textColor  = #colorLiteral(red: 0.5527273417, green: 0.5872040987, blue: 1, alpha: 1)
         }
         
+        //點擊的 cell 如果剛好 對應的 cellTrueArray[indexPath.row] == true，才算成功點擊
         if cellTrueArray[indexPath.row] {
             score += 50
             scoreLabel.text = "\(score)"
@@ -139,10 +144,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
     }
     
+    //設定 timer ，間隔時間為 1秒 ，每秒呼叫 func updateTimer()
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }
-
+    
+    //呼叫 randomCell ，
     @objc func updateTimer() {
         randomCell()
         //This will decrement(count down)the seconds.
@@ -150,9 +157,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //update time label.
         timeLabel.text = "\(seconds)"
         print(seconds)
+        if seconds < 20  {
         myCollectionView.reloadData()
+        } else {
+            timer.invalidate()
+        }
     }
     
+    //藉由cellTrueArray 來判定是否顯示 cellImage
     func randomCell() {
         let myRandom = Int(arc4random_uniform(4))
         cellTrueArray = [false,false,false,false]
