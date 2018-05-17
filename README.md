@@ -1,4 +1,4 @@
-# 訓練盒2
+# 訓練盒
 
 ![訓練盒](Readme/exercise-box-list.png)
 
