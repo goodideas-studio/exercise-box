@@ -8,8 +8,5 @@
 You get a new set of four digits each time you press the "New Number" button. The task is to enter this set of number from left to right if it appears from left side of screen(and in black font color). And vice versa, if it comes from right side of the screen (and in white font color), enter the number from right side to left
 
 
-
-![Crazy_Number.gif](Crazy_Number.gif)
-
-
+![](https://i.imgur.com/ldiaHTY.gif)
 
