@@ -11,29 +11,56 @@ import UIKit
 
 class GameVC: UIViewController {
 
-    var gestureBool: Bool = false
-    var gestureDirection = " "
+    
     
     @IBOutlet weak var resultView: UIView!
+    
     @IBOutlet weak var tableView: UIImageView!
+    @IBOutlet weak var playerCardImage: UIImageView!
+    @IBOutlet weak var playerReadyImage: UIImageView!
+    @IBOutlet weak var gamblingChipsImage: UIImageView!
+    @IBOutlet weak var bankerCardImage: UIImageView!
+    @IBOutlet weak var readyPlaceImage: UIImageView!
     
-    @IBAction func resultConfirmBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBOutlet weak var gamerChipsLabel: UILabel!
+    @IBOutlet weak var dealBtnOutlet: UIButton!
+    
+    var bankerCard: Int!
+    var playerCard: Int!
+    var gestureDirection = " "
+    
+    var cardList = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+    var clubCardList = ["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13"]
+    var heartCardList =  ["h1","h2","h3","h4","h5","h6","h7","h8","h9","h10","h11","h12","h13"]
+    
+    var gamerChips = 100 {
+        
+        didSet {
+            gamerChipsLabel.text = "\(gamerChips)"
+            if gamerChips < 100 && gamerChips != 0{
+                gamblingChipsImage.image = UIImage(named: "icons8-chip")
+            }
+            else if gamerChips > 100 {
+                gamblingChipsImage.image = UIImage(named: "icons8-roulette_chips")
+            }
+            else if gamerChips == 0{
+                gamblingChipsImage.image = UIImage(named: " ")
+                resultView.isHidden = false
+                tableView.isUserInteractionEnabled = false
+                
+                UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+                    
+                    self.resultView.frame.origin.y = UIScreen.main.bounds.height / 2 - (self.resultView.bounds.height / 2)
+                    
+                }, completion: nil)
+            }
+        }
     }
     
-    func secondInning(){
-        bankerCard = Int(arc4random_uniform(UInt32(cardList.count)))
-        print("莊家點數：\(bankerCard + 1)")
-        readyPlaceImage.image = UIImage(named: "c\(self.bankerCard + 1)")
-
-        playerCard =  Int(arc4random_uniform(UInt32(cardList.count)))
-        
-        print("玩家點數：\(playerCard + 1)")
-        playerReadyImage.image = UIImage(named: "h\(self.playerCard + 1)")
-        
-        
-    }
+   
     
+    
+    // MARK: - 手勢
     @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer) {
         self.gestureDirection = "Right"
         print("Right")
@@ -93,56 +120,15 @@ class GameVC: UIViewController {
     }
     
     
-    @IBOutlet weak var playerCardImage: UIImageView!
-    @IBOutlet weak var playerReadyImage: UIImageView!
-    @IBOutlet weak var gamblingChipsImage: UIImageView!
-    @IBOutlet weak var bankerCardImage: UIImageView!
-    @IBOutlet weak var readyPlaceImage: UIImageView!
-    
-    @IBOutlet weak var gamerChipsLabel: UILabel!
-    
-    var gamerChips = 100 {
-        
-        didSet {
-            gamerChipsLabel.text = "\(gamerChips)"
-            if gamerChips < 100 && gamerChips != 0{
-                gamblingChipsImage.image = UIImage(named: "icons8-chip")
-            }
-            else if gamerChips > 100 {
-                gamblingChipsImage.image = UIImage(named: "icons8-roulette_chips")
-            }
-            else if gamerChips == 0{
-                gamblingChipsImage.image = UIImage(named: " ")
-                resultView.isHidden = false
-                tableView.isUserInteractionEnabled = false
 
-                UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
-                    
-                    self.resultView.frame.origin.y = UIScreen.main.bounds.height / 2 - (self.resultView.bounds.height / 2)
-                    
-                }, completion: nil)
-            }
-        }
-    }
-    
-    var cardList = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-    var clubCardList = ["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13"]
-    var heartCardList =  ["h1","h2","h3","h4","h5","h6","h7","h8","h9","h10","h11","h12","h13"]
-    
-    var bankerCard: Int!
-    var playerCard: Int!
-    @IBOutlet weak var dealBtnOutlet: UIButton!
-    
-    
+    // MARK: - Game Rule
     @IBAction func dealBtn(_ sender: Any) {
         print("Starting deal cards.")
         dealCard()
 
     }
     
-
-
-    //發牌
+    
     func dealCard() {
         dealBtnOutlet.isEnabled = false
         print(cardList)
@@ -189,6 +175,20 @@ class GameVC: UIViewController {
     }
     
     
+    func secondInning(){
+        bankerCard = Int(arc4random_uniform(UInt32(cardList.count)))
+        print("莊家點數：\(bankerCard + 1)")
+        readyPlaceImage.image = UIImage(named: "c\(self.bankerCard + 1)")
+        
+        playerCard =  Int(arc4random_uniform(UInt32(cardList.count)))
+        
+        print("玩家點數：\(playerCard + 1)")
+        playerReadyImage.image = UIImage(named: "h\(self.playerCard + 1)")
+        
+        
+    }
+    
+    // MARK: - 結果判定
     func judge() {
 
         if playerCard == bankerCard && gestureDirection == "Right" || playerCard == bankerCard && gestureDirection == "Left"{
@@ -204,6 +204,12 @@ class GameVC: UIViewController {
         }
     }
     
+    @IBAction func resultConfirmBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -215,7 +221,7 @@ class GameVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
     }
 
 }
